@@ -19,17 +19,21 @@ To use this project:
 2. Set your project's initial `VERSION`.
 3. Add a description to your project.
 4. Set your project's language (C, or CXX).
-5. Add the following snippet to `myproj.h.in`:
+5. Add the following snippet to `include/Version.h.in`:
 
 ```CMake
-# myproj.h.in
+# include/Version.h.in
+#pragma once
+#ifndef VERSION_H
+#define VERSION_H
 
-#define project_VERSION_MAJOR @project_VERSION_MAJOR@
-#define project_VERSION_MINOR @project_VERSION_MINOR@ 
-#define project_VERSION_PATCH @project_VERSION_PATCH@
+#define project_VERSION_MAJOR @CMAKE_PROJECT_VERSION_MAJOR@
+#define project_VERSION_MINOR @CMAKE_PROJECT_VERSION_MINOR@
+#define project_VERSION_PATCH @CMAKE_PROJECT_VERSION_PATCH@
+
+#endif
 ```
 where project is your project's name.
-5. In `configure_file` change `myproj.h.in` and `myproj.h` to your project's name.
 
 Single sourcing of packages is done with the `configure_file` command.
-In your project you may then import `myproj.h` and access the project version.
+In your project you may then import `include/Version.h` and access the project version.

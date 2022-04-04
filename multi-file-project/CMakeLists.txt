@@ -34,8 +34,8 @@ set( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMake/modules/"
 
 # Single source project version
 configure_file (
-  "${PROJECT_SOURCE_DIR}/myproj.h.in"
-  "${PROJECT_BINARY_DIR}/myproj.h"
+  "${PROJECT_SOURCE_DIR}/include/Version.h.in"
+  "${PROJECT_BINARY_DIR}/include/Version.h"
 )
 
 # Include dependencies
