@@ -25,6 +25,6 @@ To create debug/release versions in:
 Add the following to your CMakeLists.txt file:
 ```
 install(TARGETS ${OGGEX} DESTINATION bin)
-install(TARGETS ${OGGEX} CONFIGURATIONS Debug   RUNTIME DESTINATION ${PROJECT_BINARY_DIR}/bin/debug)
-install(TARGETS ${OGGEX} CONFIGURATIONS Release RUNTIME DESTINATION ${PROJECT_BINARY_DIR}/bin/release)
+install(TARGETS ${OGGEX} CONFIGURATIONS Debug   RUNTIME DESTINATION ${PROJECT_BINARY_DIR}/debug/bin)
+install(TARGETS ${OGGEX} CONFIGURATIONS Release RUNTIME DESTINATION ${PROJECT_BINARY_DIR}/release/bin)
 ```
